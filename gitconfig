@@ -1,0 +1,37 @@
+[user]
+	name = Pedro Kostelec
+	email = pedrokost@gmail.com
+[github]
+	user = pedrokost
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[color "branch"]
+	current = yellow reverse
+	remote = green bold
+	local = blue bold
+
+[color "diff"]
+	meta = blue bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[push]
+	default = current
+
+[core]
+	editor = subl -w
+	excludesfile = ~/.gitignore
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
