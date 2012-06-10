@@ -1,5 +1,7 @@
-Mahdi Yusuf's Dot Files
+Pedro's Dot Files
 =======================
+
+Modelled after Mhadi Ysuf's Dot files: https://github.com/myusuf3/dotfiles
 
 These are my configs and setup a system the way I like it.
 
