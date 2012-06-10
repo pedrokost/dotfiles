@@ -12,7 +12,7 @@ rm ~/.gitignore
 rm ~/.tmux.conf
 rm ~/.gemrc
 rm ~/.bash_profile
-rm ~/oh-my-zsh/themes/myusuf3.zsh-theme
+rm ~/.oh-my-zsh/themes/myusuf3.zsh-theme
 
 echo "Symlinking files"
 ln -s ~/Documents/Dropbox/Misc/dev/dotfiles/zshrc ~/.zshrc
