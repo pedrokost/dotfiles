@@ -1,8 +1,6 @@
 [user]
 	name = Pedro Kostelec
 	email = pedrokost@gmail.com
-[github]
-	user = pedrokost
 
 [color]
 	diff = auto
@@ -32,6 +30,11 @@
 	ci = commit
 	st = status
 	br = branch
+	df = diff
+	dif = diff
+	dfw = diff -w
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t
 	dump = cat-file -p
