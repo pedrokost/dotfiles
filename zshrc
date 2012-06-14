@@ -43,7 +43,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
 
-alias dotfiles='~/Documents/Dropbox/Misc/Github/dotfiles'
+alias dropbox='~/Documents/Dropbox'
+alias dotfiles='$dropbox/Misc/Github/dotfiles'
 
 # Terminal 256 colors
 export TERM="xterm-256color"
+
