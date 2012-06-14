@@ -30,7 +30,8 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby heroku rvm)
+plugins=(git rails3 ruby heroku rvm zsh-syntax-highlighting)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -44,8 +45,12 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
 
 alias dropbox='~/Documents/Dropbox'
-alias dotfiles='$dropbox/Misc/Github/dotfiles'
+alias dotfiles="~/Documents/Dropbox/Misc/Github/dotfiles"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
 
+# Autocomplete man pages
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
