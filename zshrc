@@ -38,7 +38,12 @@ unsetopt correct_all
 # Customize to your needs...
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin::/usr/local/sbin
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
+
+alias dotfiles='~/Documents/Dropbox/Misc/Github/dotfiles'
 
 # Terminal 256 colors
 export TERM="xterm-256color"
