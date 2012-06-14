@@ -1,6 +1,30 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# Advanced TAB completion
+autoload -U compinit
+compinit
+
+# Anvanced Prompt support
+autoload -U promptinit
+promptinit
+
+# History
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+
+setopt listpacked              # compact completion lists
+setopt listtypes               # show types in completion
+setopt extendedglob            # weird & wacky pattern matching - yay zsh! Example: cp ^*.(tar|bz2|gz)
+setopt correctall              # spelling correction
+setopt braceccl                # sequences like {a-j}, {1..10}, etc
+setopt automenu                # Automatically use menu completion after the second consecutive request for completion
+setopt hist_ignore_all_dups    # History ignores duplicates
+setopt hist_ignore_space       # Add space before command to prevent being recorded to history
+setopt autocd                  # Implicit cd
+setopt nonomatch               # try to avoid the 'zsh: no matches found...'
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -39,7 +63,8 @@ unsetopt correct_all
 # Customize to your needs...
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin::/usr/local/sbin
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# RVM
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
@@ -54,3 +79,16 @@ export TERM="xterm-256color"
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
 zstyle ':completion:*:man:*'      menu yes select
+
+# case-insensitive (uppercase from lowercase) completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# process completion
+zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# nices default completion style?
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
