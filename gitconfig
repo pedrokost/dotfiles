@@ -33,9 +33,7 @@
 	df = diff
 	dif = diff
 	dfw = diff -w
-	lg = log -p
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	type = cat-file -t
 	dump = cat-file -p
 [credential]
