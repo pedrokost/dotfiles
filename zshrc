@@ -67,10 +67,19 @@ export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X1
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# Z - jump around
+
+. ~/.z/z.sh
+function precmd () {
+  _z --add "$(pwd -P)"
+}
+
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
 
 alias dropbox='~/Documents/Dropbox'
 alias dotfiles="~/Documents/Dropbox/Misc/Github/dotfiles"
+
+alias tp=trash-put # install trash-cli first
 
 # Terminal 256 colors
 export TERM="xterm-256color"

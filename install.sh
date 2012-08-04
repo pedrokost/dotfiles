@@ -4,7 +4,8 @@ scriptdir="`pwd`"
 
 echo "initializing submodules"
 git submodule init
-git submodule update
+git submodule updatesubo
+
 
 echo "Deleting the old files"
 rm ~/.zshrc
