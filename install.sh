@@ -4,7 +4,7 @@ scriptdir="`pwd`"
 
 echo "initializing submodules"
 git submodule init
-git submodule updatesubo
+git submodule update
 
 
 echo "Deleting the old files"

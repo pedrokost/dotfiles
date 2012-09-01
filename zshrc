@@ -67,12 +67,8 @@ export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X1
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# Z - jump around
-
-. ~/.z/z.sh
-function precmd () {
-  _z --add "$(pwd -P)"
-}
+# Fasd - fast jumping around
+eval "$(fasd --init auto)"
 
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
 
