@@ -35,6 +35,7 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="subl -w ~/.zshrc"
 # alias ohmyzsh="subl -w ~/.oh-my-zsh"
+# to give a directory an alias, you use hash. hash -d projs=~/projects/
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -49,16 +50,17 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby heroku rvm zsh-syntax-highlighting)
+plugins=(git rails3 ruby heroku rvm zsh-syntax-highlighting autojump command-not-found history-substring-search)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 
 source $ZSH/oh-my-zsh.sh
-unsetopt correct_all
+# unsetopt correct_all
+# unsetopt correctall
 
 # Customize to your needs...
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin::/usr/local/sbin
@@ -66,6 +68,8 @@ export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X1
 # RVM
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export EDITOR=subl
 
 # Fasd - fast jumping around
 eval "$(fasd --init auto)"
@@ -76,6 +80,7 @@ alias dropbox='~/Documents/Dropbox'
 alias dotfiles="~/Documents/Dropbox/Misc/Github/dotfiles"
 
 alias tp=trash-put # install trash-cli first
+alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 7488"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
