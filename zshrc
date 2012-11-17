@@ -52,6 +52,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -60,7 +61,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 
 source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
-# unsetopt correctall
+unsetopt correctall
 
 # Customize to your needs...
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin::/usr/local/sbin
@@ -69,7 +70,10 @@ export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X1
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-export EDITOR=subl
+# java for lego mindsorms
+export LEJOS_NXT_JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+
+export EDITOR="subl"
 
 # Fasd - fast jumping around
 eval "$(fasd --init auto)"
@@ -81,6 +85,8 @@ alias dotfiles="~/Documents/Dropbox/Misc/Github/dotfiles"
 
 alias tp=trash-put # install trash-cli first
 alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 7488"
+
+alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f 7,11"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
