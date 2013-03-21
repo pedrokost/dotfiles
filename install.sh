@@ -6,6 +6,17 @@ echo "initializing submodules"
 git submodule init
 git submodule update
 
+echo "Downloading and installing oh-my-zsh"
+wget --quiet --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
+echo "Downloading fasd"
+git clone --quiet https://github.com/clvv/fasd.git
+
+echo "Installing fasd"
+cd fasd
+make install --quiet
+cd ..
+rm -r fasd/
 
 echo "Deleting the old files"
 rm ~/.zshrc
