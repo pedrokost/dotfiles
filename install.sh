@@ -19,13 +19,13 @@ cd ..
 rm -r fasd/
 
 echo "Deleting the old files"
-rm ~/.zshrc
-rm ~/.bashrc
-rm ~/.gitconfig
-rm ~/.gitignore
-rm ~/.tmux.conf
-rm ~/.gemrc
-rm ~/.bash_profile
+mv ~/.zshrc ~/.zshrc_old
+mv ~/.bashrc ~/.bashrc_old
+mv ~/.gitconfig ~/.gitconfig_old
+mv ~/.gitignore ~/.gitignore_old
+mv ~/.tmux.conf ~/.tmux.conf_old
+mv ~/.gemrc ~/.gemrc_old
+mv ~/.bash_profile ~/.bash_profile_old
 
 echo "Symlinking files"
 ln -s $scriptdir/zshrc ~/.zshrc
