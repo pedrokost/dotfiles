@@ -9,11 +9,6 @@ compinit
 autoload -U promptinit
 promptinit
 
-# Programmable file renaming
-# zmv '(*).txt' '$1.html'
-autoload -U zmv
-
-
 # History
 export HISTSIZE=2000
 export HISTFILE="$HOME/.history"
@@ -61,7 +56,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby zeus heroku rvm zsh-syntax-highlighting command-not-found sublime svn history-substring-search virtualenvwrapper bundler django pip)
+plugins=(git rails3 ruby heroku rvm zsh-syntax-highlighting autojump command-not-found history-substring-search)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 source $ZSH/oh-my-zsh.sh
@@ -69,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correctall
 
 # Customize to your needs...
-export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin::/usr/local/sbin
 
 # RVM
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -78,7 +73,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # java for lego mindsorms
 export LEJOS_NXT_JAVA_HOME=/usr/lib/jvm/jdk1.7.0
 
-export EDITOR="subl -w"
+export EDITOR="subl"
 
 # Fasd - fast jumping around
 eval "$(fasd --init auto)"
@@ -91,7 +86,7 @@ alias dotfiles="~/Documents/Dropbox/Misc/Github/dotfiles"
 alias tp=trash-put # install trash-cli first
 alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 7488"
 
-alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f 8,12,13,14,15,16,17,18,19,20"
+alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f 7,11"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
@@ -113,10 +108,3 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # nices default completion style?
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-### Virutal Wrapper config for Django
-source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=~/Envs 
