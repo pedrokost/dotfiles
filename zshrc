@@ -57,11 +57,10 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby zeus heroku rvm zsh-syntax-highlighting command-not-found sublime svn history-substring-search virtualenvwrapper bundler django pip)
+plugins=(git rails3 ruby zeus heroku rvm zsh-syntax-highlighting command-not-found sublime history-substring-search bundler)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 source $ZSH/oh-my-zsh.sh
@@ -76,7 +75,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # java for lego mindsorms
-export LEJOS_NXT_JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+# export LEJOS_NXT_JAVA_HOME=/usr/lib/jvm/jdk1.7.0
 
 export EDITOR="subl -w"
 
@@ -89,9 +88,11 @@ alias dropbox='~/Documents/Dropbox'
 alias dotfiles="~/Documents/Dropbox/Misc/Github/dotfiles"
 
 alias tp=trash-put # install trash-cli first
+alias rm-real=rm
+alias rm=tp
 alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 7488"
 
-alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f 8,12,13,14,15,16,17,18,19,20"
+alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f7,11,12,13,14,15,16,17,18,19"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
@@ -118,5 +119,8 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Virutal Wrapper config for Django
-source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=~/Envs 
+# source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/Envs 
+
+# export PATH=$PATH:/home/pedro/Envs/grid/lib/python2.7/site-packages
+# export PYTHONPATH="/home/pedro/Envs/grid/lib/python2.7/site-packages:$PYTHONPATH"
