@@ -13,6 +13,11 @@ promptinit
 # zmv '(*).txt' '$1.html'
 autoload -U zmv
 
+alias zmz='noglob zmv'
+alias zcp='noglob zmv -C'
+alias zln='noglob zmv -L'
+alias zsy='noglob zmv -Ls'
+
 
 # History
 export HISTSIZE=2000
@@ -77,21 +82,27 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # java for lego mindsorms
 # export LEJOS_NXT_JAVA_HOME=/usr/lib/jvm/jdk1.7.0
 
-export EDITOR="subl -w"
+if hash subl 2>/dev/null; then
+	export EDITOR="subl -w"
+fi
+
 
 # Fasd - fast jumping around
-eval "$(fasd --init auto)"
+if hash fasd 2>/dev/null; then
+	eval "$(fasd --init auto)"
+fi
 
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
 
-alias dropbox='~/Documents/Dropbox'
-alias dotfiles="~/Documents/Dropbox/Misc/Github/dotfiles"
-
+alias dotfiles="~/Dropbox/Misc/Github/dotfiles"
 alias tp=trash-put # install trash-cli first
-alias rm-real=rm
-alias rm=tp
+# alias rm=tp
+# alias rm-real=rm
+alias open=xdg-open
 alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 7488"
-
+alias sicstus="rlwrap sicstus"
+alias prolog=sicstus
+alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 imperial"
 alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f7,11,12,13,14,15,16,17,18,19"
 
 # Terminal 256 colors
