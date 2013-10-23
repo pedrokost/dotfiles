@@ -102,7 +102,7 @@ alias open=xdg-open
 alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 7488"
 alias sicstus="rlwrap sicstus"
 alias prolog=sicstus
-alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 imperial"
+alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 ~/imperial"
 alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f7,11,12,13,14,15,16,17,18,19"
 
 # Terminal 256 colors
