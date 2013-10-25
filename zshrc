@@ -82,6 +82,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # java for lego mindsorms
 # export LEJOS_NXT_JAVA_HOME=/usr/lib/jvm/jdk1.7.0
 
+export PATH=$PATH:~/sublime_text_3/
 if hash subl 2>/dev/null; then
 	export EDITOR="subl -w"
 fi
