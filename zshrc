@@ -93,7 +93,7 @@ if hash fasd 2>/dev/null; then
 fi
 
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
-
+alias kb="setxkbmap us -variant colemak"
 alias dotfiles="~/Dropbox/Misc/Github/dotfiles"
 alias tp=trash-put # install trash-cli first
 # alias rm=tp
