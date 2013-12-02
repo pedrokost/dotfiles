@@ -65,7 +65,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby zeus heroku rvm zsh-syntax-highlighting command-not-found sublime history-substring-search bundler)
+plugins=(git rails ruby zeus heroku rvm zsh-syntax-highlighting command-not-found sublime history-substring-search bundler)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 source $ZSH/oh-my-zsh.sh
