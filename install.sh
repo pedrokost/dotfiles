@@ -26,6 +26,8 @@ mv ~/.gitignore ~/.gitignore_old
 mv ~/.tmux.conf ~/.tmux.conf_old
 mv ~/.gemrc ~/.gemrc_old
 mv ~/.bash_profile ~/.bash_profile_old
+mv ~/.config/i3/config ~/.config/i3/config_old
+mv ~/.config/i3/status ~/.config/i3/status_old
 
 echo "Symlinking files"
 ln -s $scriptdir/zshrc ~/.zshrc
@@ -35,6 +37,9 @@ ln -s $scriptdir/gitignore ~/.gitignore
 ln -s $scriptdir/tmux ~/.tmux.conf
 ln -s $scriptdir/gemrc ~/.gemrc
 ln -s $scriptdir/bash_profile ~/.bash_profile
+mkdir ~/.config/{i3,i3status}
+ln -s $scriptdir/i3config ~/.config/i3/config
+ln -s $scriptdir/i3status ~/.config/i3status/config
 
 echo "Updating submodules"
 git submodule foreach git pull origin master --recurse-submodules
