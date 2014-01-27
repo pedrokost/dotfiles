@@ -65,7 +65,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby zeus heroku rvm zsh-syntax-highlighting command-not-found sublime history-substring-search bundler)
+plugins=(git rails ruby zeus heroku rvm zsh-syntax-highlighting history-substring-search bundler)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 source $ZSH/oh-my-zsh.sh
@@ -100,7 +100,6 @@ alias tp=trash-put # install trash-cli first
 # alias rm=tp
 # alias rm-real=rm
 alias open=xdg-open
-alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 7488"
 alias sicstus="rlwrap sicstus"
 alias prolog=sicstus
 alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 ~/imperial"
