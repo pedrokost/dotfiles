@@ -9,7 +9,7 @@ order += "run_watch VPN"
 order += "wireless wlan0"
 order += "ethernet eth0"
 order += "cpu_temperature 0"
-order += "battery 0"
+order += "battery 1"
 order += "volume master"
 order += "load"
 order += "time"
@@ -25,7 +25,7 @@ ethernet eth0 {
         format_down = "E: down"
 }
 
-battery 0 {
+battery 1 {
 	format = "%status %percentage %remaining %emptytime"
 	path = "/sys/class/power_supply/BAT%d/uevent"
 	low_threshold = 10
