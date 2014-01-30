@@ -150,6 +150,7 @@ bindsym $mod+p mode "resize"
 # ========================================================
 
 # Startup applications
+exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
 exec gnome-settings-daemon
 exec nm-applet
@@ -158,8 +159,8 @@ exec gnome-sound-applet
 # exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 # exec bluetooth-applet
 # exec synapse -s
-exec dropbox start
-exec indicator-cpufreq -f 
+exec dropbox start -i
+exec indicator-cpufreq -f
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
