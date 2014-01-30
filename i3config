@@ -188,3 +188,9 @@ for_window [class="Google-chrome"] border none
 # for_window [class="Synapse"] border none
 for_window [class="Sublime_text"] border none
 # for_window [title="PlayOnLinux"] floating enable
+
+
+# volume keys
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
