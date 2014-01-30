@@ -194,3 +194,6 @@ for_window [class="Sublime_text"] border none
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# screen lock
+bindsym $mod+l exec /usr/bin/i3lock
