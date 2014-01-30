@@ -22,6 +22,8 @@ then
 	rm -r fasd/
 fi
 
+echo "Setting up the screen brightness script"
+ln -s $scriptdir/brightness.sh ~/.i3/brightness
 
 echo "Deleting the old files"
 mv ~/.zshrc ~/.zshrc_old

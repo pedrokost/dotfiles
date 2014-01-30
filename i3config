@@ -197,3 +197,12 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # screen lock
 bindsym $mod+l exec /usr/bin/i3lock
+
+# screen brightness
+# If they don't work, execute:
+# sudo chown pedro:users /sys/class/backlight/radeon_bl0/brightness
+# bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+# bindsym XF86MonBrightnessUp exec sudo sh -c "echo 100 > /sys/class/backlight/radeon_bl0/brightness"
+bindsym XF86MonBrightnessUp exec sh ~/.i3/brightness b
+bindsym XF86MonBrightnessDown exec sh ~/.i3/brightness d
