@@ -1,9 +1,7 @@
 Pedro's Dot Files
 =======================
 
-Modeled after Mhadi Ysuf's Dot files: https://github.com/myusuf3/dotfiles
-
-These are my configs and setup a system the way I like it.
+These are my config file, which setup a system the way I like it.
 
 
 Installation
