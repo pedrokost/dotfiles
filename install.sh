@@ -2,6 +2,10 @@
 
 scriptdir="`pwd`"
 
+cd
+homedir="`pwd`"
+cd "$scriptdir"
+
 echo "initializing submodules"
 git submodule init
 git submodule update
@@ -45,15 +49,15 @@ fi
 
 # echo "$rclocal"
 
-if [ "$(exists i3)" -eq 1 ]
-then
-	echo "Setting up the screen brightness script"
-	ln -s $scriptdir/brightness.sh ~/.i3/brightness
+# if [ "$(exists i3)" -eq 1 ]
+# then
+echo "Setting up the screen brightness script"
+ln -s $scriptdir/brightness.sh $homedir/.i3/brightness
 
 # 	sudo mv /etc/rc.local /etc/rc.local_old
 # 	sudo sed -i -e '$i chown pedro:users /sys/class/backlight/radeon_bl0/brightness\n' "/etc/rc.local"
 # 	# bash -c "echo "$rclocal" > "/etc/rc.local""
-fi
+# fi
 
 echo "Deleting the old files"
 mv ~/.zshrc ~/.zshrc_old
