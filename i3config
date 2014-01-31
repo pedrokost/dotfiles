@@ -111,7 +111,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+p restart
 # exit i3 (logs you out of your X session)
@@ -165,6 +165,9 @@ exec gtk-redshift -l 51.49:-0.17 -t 6500:3700
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
+bindsym $mod+Shift+c exec "google-chrome"
+bindsym $mod+Shift+m exec "matlab -desktop"
+bindsym $mod+Shift+s exec "subl"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
