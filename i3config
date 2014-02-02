@@ -175,7 +175,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # screen lockF
-bindsym $mod+l exec /usr/bin/i3lock
+bindsym $mod+l exec "i3lock -c 000000"
 
 # Exit panel
 bindsym $mod+x exec "python ~/.i3/i3-exit/i3-exit"

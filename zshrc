@@ -107,6 +107,7 @@ alias mountrobot="sshfs pi@129.31.195.68:/home/pi ~/robot"
 alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f7,11,12,13,14,15,16,17,18,19"
 
 alias i3-lock="i3lock" # called from the i3-exit script
+alias i3lock="i3lock -c 000000"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
