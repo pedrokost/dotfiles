@@ -136,3 +136,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # export PATH=$PATH:/home/pedro/Envs/grid/lib/python2.7/site-packages
 # export PYTHONPATH="/home/pedro/Envs/grid/lib/python2.7/site-packages:$PYTHONPATH"
+
+export PATH=$PATH:~/railsbricks
