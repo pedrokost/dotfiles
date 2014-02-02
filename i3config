@@ -146,7 +146,7 @@ bindsym $mod+p mode "resize"
 
 
 # ========================================================
-# Custom modificaiton here below
+# Custom modifications here below
 # ========================================================
 
 # Startup applications
@@ -168,6 +168,27 @@ bindsym $mod+Shift+k exec "nautilus --no-desktop"
 bindsym $mod+Shift+c exec "google-chrome"
 bindsym $mod+Shift+m exec "matlab -desktop"
 bindsym $mod+Shift+s exec "subl"
+
+# volume keys
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# screen lockF
+bindsym $mod+l exec /usr/bin/i3lock
+
+# Exit panel
+bindsym $mod+x exec "python ~/.i3/i3-exit/i3-exit"
+
+# screen brightness
+# If they don't work, execute:
+# sudo chown pedro:users /sys/class/backlight/radeon_bl0/brightness
+# bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+# bindsym XF86MonBrightnessUp exec sudo sh -c "echo 100 > /sys/class/backlight/radeon_bl0/brightness"
+bindsym XF86MonBrightnessUp exec sh ~/.i3/brightness b
+bindsym XF86MonBrightnessDown exec sh ~/.i3/brightness d
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -192,21 +213,4 @@ for_window [class="Google-chrome"] border none
 # for_window [class="Synapse"] border none
 for_window [class="Sublime_text"] border none
 # for_window [title="PlayOnLinux"] floating enable
-
-
-# volume keys
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
-
-# screen lock
-bindsym $mod+l exec /usr/bin/i3lock
-
-# screen brightness
-# If they don't work, execute:
-# sudo chown pedro:users /sys/class/backlight/radeon_bl0/brightness
-# bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
-# bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
-# bindsym XF86MonBrightnessUp exec sudo sh -c "echo 100 > /sys/class/backlight/radeon_bl0/brightness"
-bindsym XF86MonBrightnessUp exec sh ~/.i3/brightness b
-bindsym XF86MonBrightnessDown exec sh ~/.i3/brightness d
+for_window [class="I3-exit" instance="i3-exit"] floating enable
