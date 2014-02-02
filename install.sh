@@ -41,8 +41,14 @@ git submodule update
 if [ "$(exists i3)" -eq 1 ]
 then
 	echo "Setting up the screen brightness script"
-	unlink $homedir/.i3/brightness
-	ln -s $scriptdir/brightness.sh $homedir/.i3/brightness
+	# This is if there is no propietary graphics installed TODO automatic check
+	# unlink $homedir/.i3/brightness
+	# ln -s $scriptdir/brightness.sh $homedir/.i3/brightness
+	# This is if there is the propietary driver installed
+	unlink $homedir/.i3/atibrightness
+	ln -s $scriptdir/atibrightness.sh $homedir/.i3/atibrightness
+
+
 	# 	sudo mv /etc/rc.local /etc/rc.local_old
 	# 	sudo sed -i -e '$i chown pedro:users /sys/class/backlight/radeon_bl0/brightness\n' "/etc/rc.local"
 	# 	# bash -c "echo "$rclocal" > "/etc/rc.local""

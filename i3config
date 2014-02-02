@@ -186,8 +186,8 @@ bindsym $mod+x exec "python ~/.i3/i3-exit/i3-exit"
 # bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 # bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 # bindsym XF86MonBrightnessUp exec sudo sh -c "echo 100 > /sys/class/backlight/radeon_bl0/brightness"
-bindsym XF86MonBrightnessUp exec sh ~/.i3/brightness b
-bindsym XF86MonBrightnessDown exec sh ~/.i3/brightness d
+bindsym XF86MonBrightnessUp exec "sh ~/.i3/atibrightness inc"
+bindsym XF86MonBrightnessDown exec "sh ~/.i3/atibrightness dec"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
