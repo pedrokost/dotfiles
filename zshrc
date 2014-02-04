@@ -105,6 +105,8 @@ alias prolog=sicstus
 alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 ~/imperial"
 alias mountrobot="sshfs pi@129.31.195.68:/home/pi ~/robot"
 alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f7,11,12,13,14,15,16,17,18,19"
+alias pi="~dcw/tmp/git-clone-test/raspberry-pi-wifi/ssh-pi 80:1f:02:af:31:19"
+alias picsh="bash -c 'export PERL5LIB=/homes/dcw/tmp/git-clone-test/raspberry-pi-wifi/PERSISTENT_TUPLES; ./scp-pi 80:1f:02:af:31:19'"
 
 alias i3-lock="i3lock" # called from the i3-exit script
 alias i3lock="i3lock -c 000000"
