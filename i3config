@@ -165,6 +165,7 @@ exec indicator-cpufreq -f
 exec gtk-redshift -l 51.49:-0.17 -t 6500:3700
 exec /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness
 exec (sleep 30 && clementine)
+exec (sleep 25 && anki)
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
@@ -224,6 +225,7 @@ for_window [class="Sublime_text"] border none
 # for_window [title="PlayOnLinux"] floating enable
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 for_window [class="Clementine"] move to scratchpad, border none
+for_window [class="Anki"] move to scratchpad
 
 # Hides vertical and horizontal edger on the borders of the screen
 hide_edge_borders both
@@ -238,3 +240,6 @@ bindsym $mod+Shift+Tab workspace prev
 # Show the first scratchpad window
 bindsym $mod+Shift+f move scratchpad
 bindsym $mod+f scratchpad show
+
+bindsym $mod+c [class="Clementine"] scratchpad show
+bindsym $mod+k [class="Anki"] scratchpad show
