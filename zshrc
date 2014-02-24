@@ -108,6 +108,8 @@ alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -
 # alias pi="~dcw/tmp/git-clone-test/raspberry-pi-wifi/ssh-pi 80:1f:02:af:31:19"
 # alias picsh="bash -c 'export PERL5LIB=/homes/dcw/tmp/git-clone-test/raspberry-pi-wifi/PERSISTENT_TUPLES; ./scp-pi 80:1f:02:af:31:19'"
 
+export ICL_USER_PASS=$(cat ~/.icl)
+
 # piip=129.31.198.39
 # alias pi-ssh="ssh pi@${piip} -X"
 # alias pi-scp="scp ./*.py pi@${piip}:~/prac-files/"
