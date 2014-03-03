@@ -164,9 +164,10 @@ exec (sleep 20 && dropbox start -i)
 exec indicator-cpufreq -f
 exec gtk-redshift -l 51.49:-0.17 -t 6500:3700
 exec /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness
+exec nmcli nm wifi on  # enable Wifi
 exec (sleep 30 && clementine)
-exec (sleep 25 && anki)
-exec (sleep 40 && google-keep)  # Google Keep
+exec (sleep 120 && anki)
+exec (sleep 60 && google-keep)  # Google Keep
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
@@ -220,9 +221,10 @@ bar {
 # for_window [class="Firefox" instance="Navigator" window_role="Browser"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
 # for_window [class="Thunderbird" instance="Mail"] border none
-# for_window [class="Google-chrome"] border none
+for_window [class="Google-chrome"] border none
+for_window [class="Terminator"] border none
 # for_window [class="Synapse"] border none
-# for_window [class="Sublime_text"] border none
+for_window [class="Sublime_text"] border none
 # for_window [title="PlayOnLinux"] floating enable
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 for_window [class="Clementine"] move to scratchpad, border none
