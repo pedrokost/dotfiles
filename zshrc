@@ -97,6 +97,7 @@ fi
 
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
 alias kb="setxkbmap us -variant colemak"
+alias kbsi="setxkbmap si"
 alias dotfiles="~/Dropbox/Misc/Github/dotfiles"
 alias tp=trash-put # install trash-cli first
 # alias rm=tp
@@ -110,12 +111,11 @@ alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -
 # alias pi="~dcw/tmp/git-clone-test/raspberry-pi-wifi/ssh-pi 80:1f:02:af:31:19"
 # alias picsh="bash -c 'export PERL5LIB=/homes/dcw/tmp/git-clone-test/raspberry-pi-wifi/PERSISTENT_TUPLES; ./scp-pi 80:1f:02:af:31:19'"
 
-export ICL_USER_PASS=$(cat ~/.icl)
 
+# export ICL_USER_PASS=$(cat ~/.icl)
 # piip=129.31.198.39
 # alias pi-ssh="ssh pi@${piip} -X"
 # alias pi-scp="scp ./*.py pi@${piip}:~/prac-files/"
-
 # alias pi-ip='curl -s --data "macaddress=80:1f:02:af:31:19" --user $ICL_USER_PASS https://www.doc.ic.ac.uk/~jrj07/robotics/index.cgi | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -n 1'
 # alias pi-ssh="ssh pi@`pi-ip` -X"
 # alias pi-scp="scp ./*.py pi@`pi-ip`:~/prac-files/"
