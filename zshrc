@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+skip_global_compinit=1
+
 # Advanced TAB completion
 autoload -U compinit
 compinit
@@ -113,9 +115,10 @@ export ICL_USER_PASS=$(cat ~/.icl)
 # piip=129.31.198.39
 # alias pi-ssh="ssh pi@${piip} -X"
 # alias pi-scp="scp ./*.py pi@${piip}:~/prac-files/"
-alias pi-ip='curl -s --data "macaddress=80:1f:02:af:31:19" --user $ICL_USER_PASS https://www.doc.ic.ac.uk/~jrj07/robotics/index.cgi | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -n 1'
-alias pi-ssh="ssh pi@`pi-ip` -X"
-alias pi-scp="scp ./*.py pi@`pi-ip`:~/prac-files/"
+
+# alias pi-ip='curl -s --data "macaddress=80:1f:02:af:31:19" --user $ICL_USER_PASS https://www.doc.ic.ac.uk/~jrj07/robotics/index.cgi | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -n 1'
+# alias pi-ssh="ssh pi@`pi-ip` -X"
+# alias pi-scp="scp ./*.py pi@`pi-ip`:~/prac-files/"
 
 alias i3-lock="i3lock" # called from the i3-exit script
 alias i3lock="i3lock -c 000000"
