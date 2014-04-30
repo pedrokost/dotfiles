@@ -1,12 +1,30 @@
+# START PROFILE HEADER
+# typeset -F SECONDS=0
+# export START_TIME=$SECONDS
+ 
+# if [ -e ~/.profiling ]; then
+#   echo "zshrc started"
+ 
+#   source() {
+#     local before=$SECONDS
+#     . $*
+#     local duration=$((($SECONDS - $before) * 1000))
+#     echo "$(printf '%7.2f' $duration)ms $*"
+#   }
+# fi
+# END PROFILE HEADER
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 skip_global_compinit=1
 
+# SLOW
 # Advanced TAB completion
 autoload -U compinit
 compinit
 
+# SLOW
 # Anvanced Prompt support
 autoload -U promptinit
 promptinit
@@ -70,26 +88,26 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git rails ruby zeus heroku rvm zsh-syntax-highlighting history-substring-search bundler)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
+# SLOW
 source $ZSH/oh-my-zsh.sh
-# unsetopt correct_all
-unsetopt correctall
+# # unsetopt correct_all
+# unsetopt correctall
 
 # Customize to your needs...
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:$PATH
 
 # RVM
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# SLOW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# java for lego mindsorms
-# export LEJOS_NXT_JAVA_HOME=/usr/lib/jvm/jdk1.7.0
 
 export PATH=$PATH:~/sublime_text_3/
 if hash subl 2>/dev/null; then
 	export EDITOR="subl -w"
 fi
 
-
+# SLOW
 # Fasd - fast jumping around
 if hash fasd 2>/dev/null; then
 	eval "$(fasd --init auto)"
@@ -105,20 +123,20 @@ alias tp=trash-put # install trash-cli first
 alias open=xdg-open
 alias sicstus="rlwrap sicstus"
 alias prolog=sicstus
-alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 ~/imperial"
-alias mountrobot="sshfs pi@129.31.195.68:/home/pi ~/robot"
+# alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 ~/imperial"
+# alias mountrobot="sshfs pi@129.31.195.68:/home/pi ~/robot"
 alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f7,11,12,13,14,15,16,17,18,19"
 # alias pi="~dcw/tmp/git-clone-test/raspberry-pi-wifi/ssh-pi 80:1f:02:af:31:19"
 # alias picsh="bash -c 'export PERL5LIB=/homes/dcw/tmp/git-clone-test/raspberry-pi-wifi/PERSISTENT_TUPLES; ./scp-pi 80:1f:02:af:31:19'"
 
 
-# export ICL_USER_PASS=$(cat ~/.icl)
-# piip=129.31.198.39
-# alias pi-ssh="ssh pi@${piip} -X"
-# alias pi-scp="scp ./*.py pi@${piip}:~/prac-files/"
-# alias pi-ip='curl -s --data "macaddress=80:1f:02:af:31:19" --user $ICL_USER_PASS https://www.doc.ic.ac.uk/~jrj07/robotics/index.cgi | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -n 1'
-# alias pi-ssh="ssh pi@`pi-ip` -X"
-# alias pi-scp="scp ./*.py pi@`pi-ip`:~/prac-files/"
+# # export ICL_USER_PASS=$(cat ~/.icl)
+# # piip=129.31.198.39
+# # alias pi-ssh="ssh pi@${piip} -X"
+# # alias pi-scp="scp ./*.py pi@${piip}:~/prac-files/"
+# # alias pi-ip='curl -s --data "macaddress=80:1f:02:af:31:19" --user $ICL_USER_PASS https://www.doc.ic.ac.uk/~jrj07/robotics/index.cgi | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -n 1'
+# # alias pi-ssh="ssh pi@`pi-ip` -X"
+# # alias pi-scp="scp ./*.py pi@`pi-ip`:~/prac-files/"
 
 alias i3-lock="i3lock" # called from the i3-exit script
 alias i3lock="i3lock -c 000000"
@@ -156,3 +174,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # export PYTHONPATH="/home/pedro/Envs/grid/lib/python2.7/site-packages:$PYTHONPATH"
 
 export PATH=$PATH:~/railsbricks
+
+
+# START PROFILE FOOTER
+# show total load time
+# duration=$((($SECONDS - $START_TIME) * 1000))
+# echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
+# END PROFILE FOOTER
