@@ -218,7 +218,7 @@ bar {
 # assign [class="^Sublime_text$"] 3
 # assign [class="^Calibre$"] 4
 
-# for_window [class="Firefox" instance="Navigator" window_role="Browser"] border none
+for_window [class="Firefox"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
 # for_window [class="Thunderbird" instance="Mail"] border none
 for_window [class="Google-chrome"] border none
@@ -228,7 +228,7 @@ for_window [class="Sublime_text"] border none
 # for_window [title="PlayOnLinux"] floating enable
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 for_window [class="Clementine"] move to scratchpad, border none
-for_window [class="Anki"] move to scratchpad
+#for_window [class="Anki"] move to scratchpad
 
 # Hides vertical and horizontal edger on the borders of the screen
 hide_edge_borders both
