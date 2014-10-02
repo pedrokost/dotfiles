@@ -79,6 +79,15 @@ mkdir ~/.config/i3status/ 2>/dev/null
 ln -s $scriptdir/i3config ~/.i3/config
 ln -s $scriptdir/i3status ~/.config/i3status/config
 
+if [ "$(exists subl)" -eq 1 ]
+then
+	echo "Setting up sublime text preferences"
+	# This is if there is no propietary graphics installed TODO automatic check
+	unlink $homedir/.config/sublime-text-3
+	mv $homedir/.config/sublime-text-3 $homedir/.config/sublime-text-3.old
+	ln -s $scriptdir/../sublime-text-3 $homedir/.config/sublime-text-3
+fi
+
 echo "Updating submodules"
 git submodule foreach git pull origin master --recurse-submodules
 

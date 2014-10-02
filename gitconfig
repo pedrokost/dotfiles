@@ -36,5 +36,6 @@
 	hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	type = cat-file -t
 	dump = cat-file -p
+	wdiff = diff --color-words
 [credential]
 	helper = cache

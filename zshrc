@@ -1,3 +1,4 @@
+
 # START PROFILE HEADER
 # typeset -F SECONDS=0
 # export START_TIME=$SECONDS
@@ -37,7 +38,6 @@ alias zmz='noglob zmv'
 alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
-
 
 # History
 export HISTSIZE=2000
@@ -88,8 +88,15 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git rails ruby zeus heroku rvm zsh-syntax-highlighting history-substring-search bundler)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
+function pdfwc() {
+	echo `pdftotext $1 - | egrep -E '\w\w\w+' | wc -w`
+}
+
 # SLOW
 source $ZSH/oh-my-zsh.sh
+
+# AUTOCORRECT overwrite
+alias zeus='nocorrect zeus'
 # # unsetopt correct_all
 # unsetopt correctall
 
