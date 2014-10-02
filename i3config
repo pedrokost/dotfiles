@@ -144,8 +144,6 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 
-
-
 # ========================================================
 # Custom modifications here below
 # ========================================================
@@ -174,14 +172,13 @@ exec indicator-cpufreq -f
 exec gtk-redshift -l 51.49:-0.17 -t 6500:3700
 exec /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness
 exec nmcli nm wifi on  # enable Wifi
-exec (sleep 30 && clementine)
 exec (sleep 120 && anki)
 exec (sleep 60 && google-keep)  # Google Keep
+exec xautolock -time 30 -locker "i3lock -c 000000" # Screensaver after 30mins
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
 bindsym $mod+Shift+c exec "google-chrome"
-bindsym $mod+Shift+m exec "matlab -desktop"
 bindsym $mod+Shift+s exec "subl"
 
 # volume keys
@@ -219,27 +216,25 @@ bar {
         position top
         status_command i3status
         workspace_buttons yes
-        tray_output LVDS
+        # verbose yes   # for debugging
         colors{
-                background #232323
-                statusline #DCDCDC
+                background #3b3a36
+                statusline #ECF0F1
 
 
                 # class             border    backgrd  text
-                # focused_workspace   #191919   #002842  #dedede
-                # active_workspace    #191919   #191919  #696f89
-                # inactive_workspace  #191919   #111111  #194680
+                active_workspace    #81CFE0   #1E8BC3  #E4F1FE
+                focused_workspace    #D35400   #D35400  #22313F
+                inactive_workspace  #3b3a36   #3b3a36  #AAAAAA
                 # urgent_workspace    #656565   #000000  #508bc7
         }
 }
 
 # Window title color
-
-# colors
 # class                                 border  backgr.    text
 #client.focused                         #315858  #315858  #111111
-client.focused                          #bf3f34  #bf3f34  #111111
-client.unfocused                        #2c2e2f  #232323  #777777
+client.focused                          #D35400  #D35400  #111111
+client.unfocused                        #3b3a36  #3b3a36  #AAAAAA
 client.focused_inactive                 #2c2e2f #2c2e2f   #2c2e2f
 client.urgent                           #383a3b #383a3b   #ee0000
 
@@ -249,17 +244,21 @@ client.urgent                           #383a3b #383a3b   #ee0000
 # assign [class="^Firefox$"] 2
 # assign [class="^Sublime_text$"] 3
 # assign [class="^Calibre$"] 4
+assign [class="^ISL Pronto$"] 9
+assign [class="^Geary$"] 9
 
+# To get Xorg class: xprop | grep WM_CLASS, then click on window
 for_window [class="Firefox"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
 # for_window [class="Thunderbird" instance="Mail"] border none
 for_window [class="Google-chrome"] border none
 for_window [class="Terminator"] border none
+for_window [class="X-terminal-emulator"] border none
 # for_window [class="Synapse"] border none
 for_window [class="Sublime_text"] border none
+# for_window [class="ISL Pronto"] border none
 # for_window [title="PlayOnLinux"] floating enable
 for_window [class="I3-exit" instance="i3-exit"] floating enable
-for_window [class="Clementine"] move to scratchpad, border none
 #for_window [class="Anki"] move to scratchpad
 
 # Hides vertical and horizontal edger on the borders of the screen
@@ -276,5 +275,4 @@ bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Shift+f move scratchpad
 bindsym $mod+f scratchpad show
 
-bindsym $mod+c [class="Clementine"] scratchpad show
 bindsym $mod+k [class="Anki"] scratchpad show

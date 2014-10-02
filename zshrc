@@ -109,7 +109,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 
-export PATH=$PATH:~/sublime_text_3/
+#export PATH=$PATH:~/sublime_text_3/
 if hash subl 2>/dev/null; then
 	export EDITOR="subl -w"
 fi
