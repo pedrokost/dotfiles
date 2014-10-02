@@ -158,6 +158,8 @@ font pango: Ubuntu Mono 10
 exec --no-startup-id feh --bg-fill /home/pedro/Pictures/shanghai.jpg
 
 # Startup applications
+
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
 exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
 exec gnome-settings-daemon
