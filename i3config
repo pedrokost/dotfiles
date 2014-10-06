@@ -156,7 +156,7 @@ font pango: Ubuntu Mono 10
 exec --no-startup-id feh --bg-fill /home/pedro/Pictures/shanghai.jpg
 
 # Startup applications
-
+# (With i3, gnome-session-properties are pretty much useless and don't work)
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
 exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
@@ -175,6 +175,10 @@ exec nmcli nm wifi on  # enable Wifi
 exec (sleep 120 && anki)
 exec (sleep 60 && google-keep)  # Google Keep
 exec xautolock -time 30 -locker "i3lock -c 000000" # Screensaver after 30mins
+
+# XLAB computer only
+exec (sleep 10 && geary)               # Email
+exec (sleep 30 && islpronto)           # Internal chat app
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"

@@ -15,9 +15,9 @@ function exists() {
 	fi
 }
 
-echo "initializing submodules"
-git submodule init
-git submodule update
+# echo "initializing submodules"
+# git submodule init
+# git submodule update
 
 # rclocal=$(cat <<'END_HEREDOC'
 # #!/bin/sh -e
@@ -69,7 +69,7 @@ mv ~/.config/i3status/config ~/.config/i3status/config_old
 echo "Symlinking files"
 ln -s $scriptdir/zshrc ~/.zshrc
 ln -s $scriptdir/bashrc ~/.bashrc
-ln -s $scriptdir/gitconfig ~/.gitconfig
+cp $scriptdir/gitconfig ~/.gitconfig
 ln -s $scriptdir/gitignore ~/.gitignore
 ln -s $scriptdir/tmux ~/.tmux.conf
 ln -s $scriptdir/gemrc ~/.gemrc
@@ -78,6 +78,14 @@ mkdir ~/.i3/ 2>/dev/null
 mkdir ~/.config/i3status/ 2>/dev/null
 ln -s $scriptdir/i3config ~/.i3/config
 ln -s $scriptdir/i3status ~/.config/i3status/config
+
+echo "Configuring git"
+echo "  -> What is your name?"
+read gitName
+git config --global user.name "$gitName"
+echo "  -> What is your email?"
+read gitEmail
+git config --global user.email "$gitEmail"
 
 if [ "$(exists subl)" -eq 1 ]
 then
@@ -88,8 +96,8 @@ then
 	ln -s $scriptdir/../sublime-text-3 $homedir/.config/sublime-text-3
 fi
 
-echo "Updating submodules"
-git submodule foreach git pull origin master --recurse-submodules
+# echo "Updating submodules"
+# git submodule foreach git pull origin master --recurse-submodules
 
 echo "All done."
 
