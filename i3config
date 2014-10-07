@@ -261,6 +261,7 @@ for_window [class="Firefox" window_role="Preferences"] floating enable
 for_window [class="Google-chrome"] border none
 for_window [class="Terminator"] border none
 for_window [class="X-terminal-emulator"] border none
+for_window [class="Checkout.py"] floating enable
 # for_window [class="Synapse"] border none
 for_window [class="Sublime_text"] border none
 # for_window [class="ISL Pronto"] border none
