@@ -148,6 +148,9 @@ bindsym $mod+p mode "resize"
 # Custom modifications here below
 # ========================================================
 
+# Sound fix:
+#pulseaudio -k
+#start-pulseaudio-x11
 
 # Font style
 font pango: Ubuntu Mono 10
