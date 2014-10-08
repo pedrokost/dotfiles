@@ -151,6 +151,10 @@ bindsym $mod+p mode "resize"
 # Sound fix:
 #pulseaudio -k
 #start-pulseaudio-x11
+#sudo alsa force-reload
+#start-pulseaudio-x11
+#sudo gnome-control-center
+
 
 # Font style
 font pango: Ubuntu Mono 10
@@ -163,6 +167,7 @@ exec --no-startup-id feh --bg-fill /home/pedro/Pictures/shanghai.jpg
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
 exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
+exec isxlab start-pulseaudio-x11                          # audio fix for xlab
 exec gnome-settings-daemon
 exec nm-applet
 exec gnome-power-manager
@@ -180,8 +185,8 @@ exec (sleep 60 && google-keep)  # Google Keep
 exec xautolock -time 30 -locker "i3lock -c 000000" # Screensaver after 30mins
 
 # XLAB computer only
-exec (sleep 10 && geary)               # Email
-exec (sleep 30 && islpronto)           # Internal chat app
+exec (sleep 10 && isxlab thunderbird)         # Email
+exec (sleep 30 && isxlab islpronto)           # Internal chat app
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
@@ -252,7 +257,7 @@ client.urgent                           #383a3b #383a3b   #ee0000
 # assign [class="^Sublime_text$"] 3
 # assign [class="^Calibre$"] 4
 assign [class="^ISL Pronto$"] 9
-assign [class="^Geary$"] 9
+assign [class="^Thunderbird$"] 9
 
 # To get Xorg class: xprop | grep WM_CLASS, then click on window
 for_window [class="Firefox"] border none

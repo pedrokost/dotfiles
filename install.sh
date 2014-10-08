@@ -78,6 +78,10 @@ mkdir ~/.i3/ 2>/dev/null
 mkdir ~/.config/i3status/ 2>/dev/null
 ln -s $scriptdir/i3config ~/.i3/config
 ln -s $scriptdir/i3status ~/.config/i3status/config
+ln -s $scriptdir/isxlab.sh /usr/local/bin/isxlab
+
+echo "Prepare executables"
+#chmod +x /usr/local/bin
 
 echo "Configuring git"
 echo "  -> What is your name?"
