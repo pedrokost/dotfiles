@@ -87,7 +87,7 @@ echo "Configuring git"
 read -p "	-> What is your name?" gitName
 gitName=${gitName:-Pedro Kostelec}
 git config --global user.name "$gitName"
-echo -p "  -> What is your email?" gitEmail
+read -p "  -> What is your email?" gitEmail
 gitEmail=${gitEmail:-"pedro.kostelec@xlab.si"}
 git config --global user.email "$gitEmail"
 
