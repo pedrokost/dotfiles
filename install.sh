@@ -52,6 +52,13 @@ then
 	# 	sudo mv /etc/rc.local /etc/rc.local_old
 	# 	sudo sed -i -e '$i chown pedro:users /sys/class/backlight/radeon_bl0/brightness\n' "/etc/rc.local"
 	# 	# bash -c "echo "$rclocal" > "/etc/rc.local""
+	mv ~/.i3/config ~/.i3/config_old
+	mv ~/.config/i3status/config ~/.config/i3status/config_old
+	
+	mkdir ~/.i3/ 2>/dev/null
+	mkdir ~/.config/i3status/ 2>/dev/null
+	ln -s $scriptdir/i3config ~/.i3/config
+	ln -s $scriptdir/i3status ~/.config/i3status/config
 fi
 
 
@@ -60,24 +67,16 @@ mv ~/.zshrc ~/.zshrc_old
 mv ~/.bashrc ~/.bashrc_old
 mv ~/.gitconfig ~/.gitconfig_old
 mv ~/.gitignore ~/.gitignore_old
-mv ~/.tmux.conf ~/.tmux.conf_old
 mv ~/.gemrc ~/.gemrc_old
 mv ~/.bash_profile ~/.bash_profile_old
-mv ~/.i3/config ~/.i3/config_old
-mv ~/.config/i3status/config ~/.config/i3status/config_old
 
 echo "Symlinking files"
 ln -s $scriptdir/zshrc ~/.zshrc
 ln -s $scriptdir/bashrc ~/.bashrc
 cp $scriptdir/gitconfig ~/.gitconfig
 ln -s $scriptdir/gitignore ~/.gitignore
-ln -s $scriptdir/tmux ~/.tmux.conf
 ln -s $scriptdir/gemrc ~/.gemrc
 ln -s $scriptdir/bash_profile ~/.bash_profile
-mkdir ~/.i3/ 2>/dev/null
-mkdir ~/.config/i3status/ 2>/dev/null
-ln -s $scriptdir/i3config ~/.i3/config
-ln -s $scriptdir/i3status ~/.config/i3status/config
 ln -s $scriptdir/isxlab.sh /usr/local/bin/isxlab
 
 echo "Prepare executables"
