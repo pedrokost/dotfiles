@@ -187,6 +187,7 @@ exec xautolock -time 30 -locker "i3lock -c 000000" # Screensaver after 30mins
 # XLAB computer only
 exec (sleep 10 && isxlab thunderbird)         # Email
 exec (sleep 30 && isxlab islpronto)           # Internal chat app
+exec (sleep 100 && isxlab skype)           # Internal chat app
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"

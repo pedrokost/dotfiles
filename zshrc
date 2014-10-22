@@ -121,8 +121,8 @@ if hash fasd 2>/dev/null; then
 fi
 
 # alias youtube='~/Github/youtube-dl/youtube-dl -t' 
-alias kb="setxkbmap us -variant colemak"
-alias kbsi="setxkbmap si"
+alias kb="setxkbmap us -variant colemak"   # Colemak keyboard layout
+alias kbsi="setxkbmap si"                  # Slovenian keyboard layout
 alias dotfiles="~/Dropbox/Misc/Github/dotfiles"
 alias tp=trash-put # install trash-cli first
 # alias rm=tp
@@ -188,3 +188,6 @@ export PATH=$PATH:~/railsbricks
 # duration=$((($SECONDS - $START_TIME) * 1000))
 # echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
 # END PROFILE FOOTER
+
+
+unalias gm # Conflics with Graphicsmagic

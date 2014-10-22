@@ -84,11 +84,11 @@ echo "Prepare executables"
 #chmod +x /usr/local/bin
 
 echo "Configuring git"
-echo "  -> What is your name?"
-read gitName
+read -p "	-> What is your name?" gitName
+gitName=${gitName:-Pedro Kostelec}
 git config --global user.name "$gitName"
-echo "  -> What is your email?"
-read gitEmail
+echo -p "  -> What is your email?" gitEmail
+gitEmail=${gitEmail:-"pedro.kostelec@xlab.si"}
 git config --global user.email "$gitEmail"
 
 if [ "$(exists subl)" -eq 1 ]
