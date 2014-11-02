@@ -1,18 +1,18 @@
 
 # START PROFILE HEADER
-# typeset -F SECONDS=0
-# export START_TIME=$SECONDS
+typeset -F SECONDS=0
+export START_TIME=$SECONDS
  
-# if [ -e ~/.profiling ]; then
-#   echo "zshrc started"
+if [ -e ~/.profiling ]; then
+  echo "zshrc started"
  
-#   source() {
-#     local before=$SECONDS
-#     . $*
-#     local duration=$((($SECONDS - $before) * 1000))
-#     echo "$(printf '%7.2f' $duration)ms $*"
-#   }
-# fi
+  source() {
+    local before=$SECONDS
+    . $*
+    local duration=$((($SECONDS - $before) * 1000))
+    echo "$(printf '%7.2f' $duration)ms $*"
+  }
+fi
 # END PROFILE HEADER
 
 # Source Prezto.
@@ -178,8 +178,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # START PROFILE FOOTER
 # show total load time
-# duration=$((($SECONDS - $START_TIME) * 1000))
-# echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
+duration=$((($SECONDS - $START_TIME) * 1000))
+echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
 # END PROFILE FOOTER
 
 # unalias gm # Conflics with Graphicsmagic

@@ -25,20 +25,19 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'terminal' \
   'editor' \
   'history' \
   'directory' \
   'spectrum' \
   'utility' \
   'ssh' \
-  'completion' \
   'ruby' \
   'rails' \
   'git' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
+  # 'completion' \  # Make it 500ms slower!!
 
 #
 # Editor
