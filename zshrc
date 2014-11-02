@@ -1,19 +1,19 @@
 
-# START PROFILE HEADER
-typeset -F SECONDS=0
-export START_TIME=$SECONDS
+# # START PROFILE HEADER
+# typeset -F SECONDS=0
+# export START_TIME=$SECONDS
  
-if [ -e ~/.profiling ]; then
-  echo "zshrc started"
+# if [ -e ~/.profiling ]; then
+#   echo "zshrc started"
  
-  source() {
-    local before=$SECONDS
-    . $*
-    local duration=$((($SECONDS - $before) * 1000))
-    echo "$(printf '%7.2f' $duration)ms $*"
-  }
-fi
-# END PROFILE HEADER
+#   source() {
+#     local before=$SECONDS
+#     . $*
+#     local duration=$((($SECONDS - $before) * 1000))
+#     echo "$(printf '%7.2f' $duration)ms $*"
+#   }
+# fi
+# # END PROFILE HEADER
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -176,10 +176,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # export PATH=$PATH:/home/pedro/Envs/grid/lib/python2.7/site-packages
 # export PYTHONPATH="/home/pedro/Envs/grid/lib/python2.7/site-packages:$PYTHONPATH"
 
-# START PROFILE FOOTER
-# show total load time
-duration=$((($SECONDS - $START_TIME) * 1000))
-echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
-# END PROFILE FOOTER
+# # START PROFILE FOOTER
+# # show total load time
+# duration=$((($SECONDS - $START_TIME) * 1000))
+# echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
+# # END PROFILE FOOTER
 
 # unalias gm # Conflics with Graphicsmagic
