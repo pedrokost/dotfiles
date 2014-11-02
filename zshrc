@@ -103,8 +103,6 @@ bindkey -M vicmd "?" history-incremental-search-forward
 bindkey -M vicmd "//" history-beginning-search-backward
 bindkey -M vicmd "??" history-beginning-search-forward
 
-bindkey "\eOP" run-help
-
 # oh wow!  This is killer...  try it!
 bindkey -M vicmd "q" push-line
 

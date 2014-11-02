@@ -168,6 +168,7 @@ exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix
 exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
 exec isxlab start-pulseaudio-x11                          # audio fix for xlab
+# exec isxlab ssh-add ~/.ssh/id_rsa                       # activate my ssh key
 exec gnome-settings-daemon
 exec nm-applet
 exec gnome-power-manager
