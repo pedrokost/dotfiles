@@ -64,6 +64,8 @@ fi
 
 echo "Deleting the old files"
 mv ~/.zshrc ~/.zshrc_old
+mv ~/.zpreztorc ~/.zpreztorc_old
+mv ~/.zprezto/modules/prompt/functions/prompt_josh_setup ~/.zprezto/modules/prompt/functions/prompt_josh_setup_old
 mv ~/.bashrc ~/.bashrc_old
 mv ~/.gitconfig ~/.gitconfig_old
 mv ~/.gitignore ~/.gitignore_old
@@ -72,7 +74,9 @@ mv ~/.bash_profile ~/.bash_profile_old
 
 echo "Symlinking files"
 ln -s $scriptdir/zshrc ~/.zshrc
-ln -s $scriptdir/bashrc ~/.bashrc
+ln -s $scriptdir/zpreztorc ~/.zpreztorc
+mkdir -p ~/.zprezto/modules/prompt/functions
+ln -s $scriptdir/prompt_josh_setup ~/.zprezto/modules/prompt/functions/prompt_josh_setup
 cp $scriptdir/gitconfig ~/.gitconfig
 ln -s $scriptdir/gitignore ~/.gitignore
 ln -s $scriptdir/gemrc ~/.gemrc
