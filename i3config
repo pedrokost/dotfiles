@@ -196,9 +196,11 @@ bindsym $mod+Shift+c exec "google-chrome"
 bindsym $mod+Shift+s exec "subl"
 
 # volume keys
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+
+
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%- unmute
+bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 
 # screen lockF
 bindsym $mod+l exec "i3lock -c 000000"
