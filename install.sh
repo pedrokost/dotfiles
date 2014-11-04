@@ -59,6 +59,9 @@ then
 	mkdir ~/.config/i3status/ 2>/dev/null
 	ln -s $scriptdir/i3config ~/.i3/config
 	ln -s $scriptdir/i3status ~/.config/i3status/config
+
+	# Nautilus shouldn't open a desktop window
+	gsettings set org.gnome.desktop.background show-desktop-icons false
 fi
 
 
