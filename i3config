@@ -110,6 +110,11 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# move workspace to another randr output
+bindsym $mod+Mod1+Right move workspace to output right
+bindsym $mod+Mod1+Left move workspace to output left
+# alternatively, you can use the cursor keys:
+
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
