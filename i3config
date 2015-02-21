@@ -165,7 +165,7 @@ bindsym $mod+p mode "resize"
 font pango: Ubuntu Mono 10
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill /home/pedro/Pictures/shanghai.jpg
+exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/aurora.jpg
 
 # Startup applications
 # (With i3, gnome-session-properties are pretty much useless and don't work)
@@ -174,7 +174,8 @@ exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
 exec isxlab start-pulseaudio-x11                          # audio fix for xlab
 # exec isxlab ssh-add ~/.ssh/id_rsa                       # activate my ssh key
-exec gnome-settings-daemon
+exec gnome-settings-daemon # ubuntu before 14.10
+exec unity-settings-daemon # ubuntu 14.10
 exec nm-applet
 exec gnome-power-manager
 exec gnome-sound-applet
@@ -182,12 +183,12 @@ exec gnome-sound-applet
 # exec bluetooth-applet
 # exec synapse -s
 exec (sleep 20 && dropbox start -i)
-exec indicator-cpufreq -f
-exec gtk-redshift -l 45.96:14.63 -t 6500:3700
+# exec indicator-cpufreq -f
+exec gtk-redshift -l 45.96:14.63 -t 6500:4100
 exec /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness
 exec nmcli nm wifi on  # enable Wifi
 exec (sleep 120 && anki)
-exec (sleep 60 && google-keep)  # Google Keep
+# exec (sleep 60 && google-keep)  # Google Keep
 exec xautolock -time 30 -locker "i3lock -c 000000" # Screensaver after 30mins
 
 # XLAB computer only
@@ -267,6 +268,7 @@ client.urgent                           #383a3b #383a3b   #ee0000
 # assign [class="^Calibre$"] 4
 assign [class="^ISL Pronto$"] 9
 assign [class="^Thunderbird$"] 9
+assign [class="^Skype$"] 8
 
 # To get Xorg class: xprop | grep WM_CLASS, then click on window
 for_window [class="Firefox"] border none
