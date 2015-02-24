@@ -9,9 +9,10 @@ order += "ipv6"
 order += "wireless wlan0"
 order += "ethernet eth0"
 order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "battery 0"
 order += "battery 1"
 order += "volume master"
-# order += "load"
 order += "time"
 
 wireless wlan0 {
@@ -25,9 +26,21 @@ ethernet eth0 {
         format_down = ""
 }
 
+cpu_usage {
+
+}
+
+battery 0 {
+  format = "%status %percentage %remaining"
+  path = "/sys/class/power_supply/BAT%d/uevent"
+  integer_battery_capacity=true
+  low_threshold = 10
+}
+
 battery 1 {
-	format = "%status %percentage %remaining %emptytime"
+	format = "%status %percentage %remaining"
 	path = "/sys/class/power_supply/BAT%d/uevent"
+  	integer_battery_capacity=true
 	low_threshold = 10
 }
 
