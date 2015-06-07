@@ -85,6 +85,8 @@ ln -s $scriptdir/gitignore ~/.gitignore
 ln -s $scriptdir/gemrc ~/.gemrc
 ln -s $scriptdir/bash_profile ~/.bash_profile
 ln -s $scriptdir/isxlab.sh /usr/local/bin/isxlab
+ln -s $scriptdir/isnotxlab.sh /usr/local/bin/isnotxlab
+ln -s $scriptdir/execonce.sh /usr/local/bin/execonce
 
 echo "Prepare executables"
 #chmod +x /usr/local/bin

@@ -172,7 +172,7 @@ exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/aurora.jpg
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
 exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
-exec isxlab start-pulseaudio-x11                          # audio fix for xlab
+exec (isxlab && execonce start-pulseaudio-x11)                          # audio fix for xlab
 # exec isxlab ssh-add ~/.ssh/id_rsa                       # activate my ssh key
 exec gnome-settings-daemon # ubuntu before 14.10
 exec unity-settings-daemon # ubuntu 14.10
@@ -187,14 +187,16 @@ exec (sleep 20 && dropbox start -i)
 exec gtk-redshift -l 45.96:14.63 -t 6500:4100
 exec /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness
 exec nmcli nm wifi on  # enable Wifi
-exec (sleep 120 && anki)
+exec (sleep 120 && isnotxlab && execonce anki)
 # exec (sleep 60 && google-keep)  # Google Keep
 exec xautolock -time 30 -locker "i3lock -c 000000" # Screensaver after 30mins
+exec syndaemon -i 0.3 -d # this disables the clickpad for 1.2 seconds after typing anything 
+
 
 # XLAB computer only
-exec (sleep 10 && isxlab thunderbird)         # Email
-exec (sleep 30 && isxlab islpronto)           # Internal chat app
-exec (sleep 100 && isxlab skype)           # Internal chat app
+exec (sleep 10 && isxlab && execonce thunderbird)         # Email
+exec (sleep 30 && isxlab && execonce islpronto)           # Internal chat app
+exec (sleep 100 && isxlab && execonce skype)           # Internal chat app
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
