@@ -176,8 +176,14 @@ export NVM_DIR="/home/pedro/.nvm"
 
 
 ### Virutal Wrapper config for Django
-# source /usr/local/bin/virtualenvwrapper.sh
-# export WORKON_HOME=~/Envs 
+# where to store our virtual envs
+export WORKON_HOME=$HOME/virtualenvs 
+# where projects will reside
+export PROJECT_HOME=$HOME/xMarine
+# where is the virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
+
+
 
 # export PATH=$PATH:/home/pedro/Envs/grid/lib/python2.7/site-packages
 # export PYTHONPATH="/home/pedro/Envs/grid/lib/python2.7/site-packages:$PYTHONPATH"
