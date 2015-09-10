@@ -201,6 +201,7 @@ exec syndaemon -i 0.3 -d # this disables the clickpad for 1.2 seconds after typi
 exec (sleep 10 && isxlab && execonce thunderbird)         # Email
 exec (sleep 30 && isxlab && execonce islpronto)           # Internal chat app
 exec (sleep 100 && isxlab && execonce skype)           # Internal chat app
+exec (sleep 45 && isxlab && execonce scudcloud)
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
