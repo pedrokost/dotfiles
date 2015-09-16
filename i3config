@@ -281,6 +281,7 @@ assign [class="^Skype$"] 8
 for_window [class="Firefox"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
 # for_window [class="Thunderbird" instance="Mail"] border none
+for_window [class="google-chrome-beta"] border none
 for_window [class="Google-chrome"] border none
 for_window [class="Terminator"] border none
 for_window [class="X-terminal-emulator"] border none
