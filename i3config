@@ -18,7 +18,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+#font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -169,7 +169,9 @@ font pango: Ubuntu Mono 10
 
 # Wallpaper
 # exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/aurora.jpg
-exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/lake_powel.jpg
+# exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/lake_powel.jpg
+exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/endeavour.jpg
+exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/endeavour.jpg )
 
 # Startup applications
 # (With i3, gnome-session-properties are pretty much useless and don't work)
@@ -201,7 +203,7 @@ exec syndaemon -i 0.3 -d # this disables the clickpad for 1.2 seconds after typi
 exec (sleep 10 && isxlab && execonce thunderbird)         # Email
 exec (sleep 30 && isxlab && execonce islpronto)           # Internal chat app
 exec (sleep 100 && isxlab && execonce skype)           # Internal chat app
-exec (sleep 45 && isxlab && execonce scudcloud)
+exec (sleep 45 && isxlab && execonce slack)
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
@@ -280,6 +282,7 @@ assign [class="^Skype$"] 8
 # To get Xorg class: xprop | grep WM_CLASS, then click on window
 for_window [class="Firefox"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
+for_window [class="Nylas N1"] border none
 # for_window [class="Thunderbird" instance="Mail"] border none
 for_window [class="google-chrome-beta"] border none
 for_window [class="Google-chrome"] border none

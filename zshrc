@@ -12,7 +12,7 @@
 #     local duration=$((($SECONDS - $before) * 1000))
 #     echo "$(printf '%7.2f' $duration)ms $*"
 #   }
-# fi
+# f
 # # END PROFILE HEADER
 
 # Source Prezto.
@@ -121,6 +121,7 @@ export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X1
 # RVM
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/.rvm/gems/ruby-2.2.0/bin:$PATH
+export PATH=./node_modules/.bin:$PATH  # for NVM
 # SLOW
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -171,8 +172,8 @@ export TERM="xterm-256color"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Node version manager
-export NVM_DIR="/home/pedro/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="/home/pedro/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
 ### Virutal Wrapper config for Django
@@ -195,3 +196,17 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 # # END PROFILE FOOTER
 
 # unalias gm # Conflics with Graphicsmagic
+
+
+# Optimal image resizing
+# smartresize inputfile.png 300 outputdir/
+smartresize() {
+   mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+}
+
+# smartresizekeepsize inputfile.png outputdir/
+smartresizekeepsize() {
+   sz=$(identify $1 | cut -d' ' -f3)
+   echo $1 $sz
+   mogrify -path $2 -filter Triangle -define filter:support=2 -thumbnail $sz -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+}

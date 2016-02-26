@@ -87,6 +87,11 @@ ln -s $scriptdir/bash_profile ~/.bash_profile
 ln -s $scriptdir/isxlab.sh /usr/local/bin/isxlab
 ln -s $scriptdir/isnotxlab.sh /usr/local/bin/isnotxlab
 ln -s $scriptdir/execonce.sh /usr/local/bin/execonce
+mkdir -p ~/.config/dunst
+ln -s $scriptdir/dunstrc ~/.config/dunst/dunstrc
+ln -s $scriptdir/dunst_espeak.sh ~/.config/dunst/dunst_espeak.sh
+# sudo chmod +x ~/.config/dunst/dunst_espeak.sh
+ln -s $scriptdir/gotosleep_espeak.sh ~/.config/dunst/gotosleep_espeak.sh
 
 echo "Prepare executables"
 #chmod +x /usr/local/bin
