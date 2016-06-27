@@ -172,8 +172,8 @@ export TERM="xterm-256color"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Node version manager
-# export NVM_DIR="/home/pedro/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="/home/pedro/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
 ### Virutal Wrapper config for Django

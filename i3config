@@ -118,6 +118,23 @@ bindsym $mod+Mod1+Right move workspace to output right
 bindsym $mod+Mod1+Left move workspace to output left
 # alternatively, you can use the cursor keys:
 
+# Take screenshot
+bindsym Print exec gnome-screenshot
+# Take screenshot interactive
+bindsym Shift+Print exec gnome-screenshot -i
+
+## Take screenshot of a window (with pointer)
+#bindsym Mod1+Print exec gnome-screenshot -w -p
+## Take a screenshot of an area (with pointer)
+#bindsym Mod2+Print exec gnome-screenshot -a -p
+## Copy a screenshot to clipboard
+#bindsym Mod3+Print exec gnome-screenshot -c -p
+## Copy a screenshot of a window to clipboard
+#bindsym Mod3+Mod2+Print exec gnome-screenshot -c -w -p
+## Copy a screenshot of an area to clipboard
+#bindsym Mod3+Mod2+Print exec gnome-screenshot -c -a -p
+
+
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -170,8 +187,8 @@ font pango: Ubuntu Mono 10
 # Wallpaper
 # exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/aurora.jpg
 # exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/lake_powel.jpg
-exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/endeavour.jpg
-exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/endeavour.jpg )
+exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/schafberg.jpg
+exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/schafberg.jpg )
 
 # Startup applications
 # (With i3, gnome-session-properties are pretty much useless and don't work)
@@ -200,7 +217,7 @@ exec syndaemon -i 0.3 -d # this disables the clickpad for 1.2 seconds after typi
 
 
 # XLAB computer only
-exec (sleep 10 && isxlab && execonce thunderbird)         # Email
+exec (sleep 10 && execonce WMail)         # Email
 exec (sleep 30 && isxlab && execonce islpronto)           # Internal chat app
 exec (sleep 100 && isxlab && execonce skype)           # Internal chat app
 exec (sleep 45 && isxlab && execonce slack)
@@ -277,6 +294,7 @@ client.urgent                           #383a3b #383a3b   #ee0000
 # assign [class="^Calibre$"] 4
 assign [class="^ISL Pronto$"] 9
 assign [class="^Thunderbird$"] 9
+assign [class="^wmail$"] 9
 assign [class="^Skype$"] 8
 
 # To get Xorg class: xprop | grep WM_CLASS, then click on window
@@ -284,6 +302,7 @@ for_window [class="Firefox"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
 for_window [class="Nylas N1"] border none
 # for_window [class="Thunderbird" instance="Mail"] border none
+ for_window [class="wmail" instance="wmail"] border none
 for_window [class="google-chrome-beta"] border none
 for_window [class="Google-chrome"] border none
 for_window [class="Terminator"] border none
