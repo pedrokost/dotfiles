@@ -218,7 +218,6 @@ exec syndaemon -i 0.3 -d # this disables the clickpad for 1.2 seconds after typi
 
 # XLAB computer only
 exec (sleep 10 && execonce WMail)         # Email
-exec (sleep 30 && isxlab && execonce islpronto)           # Internal chat app
 exec (sleep 100 && isxlab && execonce skype)           # Internal chat app
 exec (sleep 45 && isxlab && execonce slack)
 
