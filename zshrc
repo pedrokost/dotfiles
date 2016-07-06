@@ -163,6 +163,7 @@ alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -
 alias i3-lock="i3lock" # called from the i3-exit script
 alias i3lock="i3lock -c 000000"
 alias google-keep="google-chrome --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
+alias wififix="nmcli networking off && nmcli networking on"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
