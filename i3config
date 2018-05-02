@@ -187,8 +187,10 @@ font pango: Ubuntu Mono 10
 # Wallpaper
 # exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/aurora.jpg
 # exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/lake_powel.jpg
-exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/schafberg.jpg
-exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/schafberg.jpg )
+exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/wanaka.jpg
+exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/wanaka.jpg )
+# exec prey
+
 
 # Startup applications
 # (With i3, gnome-session-properties are pretty much useless and don't work)
@@ -223,7 +225,7 @@ exec (sleep 45 && isxlab && execonce slack)
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
-bindsym $mod+Shift+c exec "google-chrome"
+bindsym $mod+Shift+c exec "google-chrome-beta"
 bindsym $mod+Shift+s exec "subl"
 
 # volume keys
@@ -298,10 +300,11 @@ assign [class="^Skype$"] 8
 
 # To get Xorg class: xprop | grep WM_CLASS, then click on window
 for_window [class="Firefox"] border none
+for_window [class="Rstudio"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
 for_window [class="Nylas N1"] border none
 # for_window [class="Thunderbird" instance="Mail"] border none
- for_window [class="wmail" instance="wmail"] border none
+for_window [class="wmail" instance="wmail"] border none
 for_window [class="google-chrome-beta"] border none
 for_window [class="Google-chrome"] border none
 for_window [class="Terminator"] border none
@@ -313,6 +316,7 @@ for_window [class="Sublime_text"] border none
 # for_window [title="PlayOnLinux"] floating enable
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 #for_window [class="Anki"] move to scratchpad
+for_window [class="Transmission" window_type="NORMAL"] resize shrink right 1200, resize shrink left 1200
 
 # Hides vertical and horizontal edger on the borders of the screen
 hide_edge_borders both

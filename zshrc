@@ -29,6 +29,8 @@ alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
+alias ucc='XDG_CURRENT_DESKTOP=Unity7 unity-control-center'
+
 # History
 export HISTSIZE=2000
 export HISTFILE="$HOME/.history"
@@ -172,10 +174,8 @@ export TERM="xterm-256color"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-### Node version manager
-export NVM_DIR="/home/pedro/.nvm"
+export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 
 ### Virutal Wrapper config for Django
 # where to store our virtual envs
@@ -183,7 +183,7 @@ export WORKON_HOME=$HOME/virtualenvs
 # where projects will reside
 export PROJECT_HOME=$HOME/xMarine
 # where is the virtualenvwrapper.sh
-source $HOME/.local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 
 
@@ -211,3 +211,6 @@ smartresizekeepsize() {
    echo $1 $sz
    mogrify -path $2 -filter Triangle -define filter:support=2 -thumbnail $sz -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
 }
+
+
+

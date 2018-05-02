@@ -1,4 +1,6 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+source ~/.profile
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
