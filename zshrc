@@ -1,4 +1,4 @@
-
+\
 # # START PROFILE HEADER
 # typeset -F SECONDS=0
 # export START_TIME=$SECONDS
@@ -30,7 +30,7 @@ alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
 alias ucc='XDG_CURRENT_DESKTOP=Unity7 unity-control-center'
-
+alias gncc='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
 # History
 export HISTSIZE=2000
 export HISTFILE="$HOME/.history"
@@ -179,7 +179,7 @@ export NVM_DIR=~/.nvm
 
 ### Virutal Wrapper config for Django
 # where to store our virtual envs
-export WORKON_HOME=$HOME/virtualenvs 
+export WORKON_HOME=$HOME/.virtualenvs 
 # where projects will reside
 export PROJECT_HOME=$HOME/xMarine
 # where is the virtualenvwrapper.sh
@@ -211,6 +211,3 @@ smartresizekeepsize() {
    echo $1 $sz
    mogrify -path $2 -filter Triangle -define filter:support=2 -thumbnail $sz -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
 }
-
-
-

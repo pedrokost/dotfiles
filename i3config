@@ -169,6 +169,21 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 
+set $mode_system System (l) lock, (e) logout, (Shift+s) suspend, (r) reboot, (s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+x mode "$mode_system"
+
 # ========================================================
 # Custom modifications here below
 # ========================================================
@@ -193,14 +208,16 @@ exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/wanaka.jpg )
 
 
 # Startup applications
+
+exec_always --no-startup-id ~/.config/polybar/polybar.sh &
+
 # (With i3, gnome-session-properties are pretty much useless and don't work)
-exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
-exec /usr/share/samsung-tools/session-service.py
+# exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
+# exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
-exec (isxlab && execonce start-pulseaudio-x11)                          # audio fix for xlab
 # exec isxlab ssh-add ~/.ssh/id_rsa                       # activate my ssh key
 exec gnome-settings-daemon # ubuntu before 14.10
-exec unity-settings-daemon # ubuntu 14.10
+# exec unity-settings-daemon # ubuntu 14.10
 exec nm-applet
 exec gnome-power-manager
 exec gnome-sound-applet
@@ -210,11 +227,10 @@ exec gnome-sound-applet
 exec (sleep 20 && dropbox start -i)
 # exec indicator-cpufreq -f
 exec gtk-redshift -l 45.96:14.63 -t 6500:4100
-exec /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness
 exec nmcli nm wifi on  # enable Wifi
-exec (sleep 120 && isnotxlab && execonce anki)
+# exec (sleep 120 && isnotxlab && execonce anki)
 # exec (sleep 60 && google-keep)  # Google Keep
-exec xautolock -time 30 -locker "i3lock -c 000000" # Screensaver after 30mins
+exec xautolock -time 15 -locker "i3lock -c 000000" # Screensaver after 30mins
 exec syndaemon -i 0.3 -d # this disables the clickpad for 1.2 seconds after typing anything 
 
 
@@ -222,6 +238,7 @@ exec syndaemon -i 0.3 -d # this disables the clickpad for 1.2 seconds after typi
 exec (sleep 10 && execonce WMail)         # Email
 exec (sleep 100 && isxlab && execonce skype)           # Internal chat app
 exec (sleep 45 && isxlab && execonce slack)
+exec (isxlab && execonce start-pulseaudio-x11)                          # audio fix for xlab
 
 # Custom key-shortcuts
 bindsym $mod+Shift+k exec "nautilus --no-desktop"
@@ -238,9 +255,6 @@ bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 # screen lockF
 bindsym $mod+l exec "i3lock -c 000000"
 
-# Exit panel
-bindsym $mod+x exec "python ~/.i3/i3-exit/i3-exit"
-
 # screen brightness
 # If they don't work, execute:
 # sudo chown pedro:users /sys/class/backlight/radeon_bl0/brightness
@@ -253,31 +267,37 @@ bindsym $mod+x exec "python ~/.i3/i3-exit/i3-exit"
 # bindsym XF86MonBrightnessDown exec "sh ~/.i3/atibrightness dec"
 
 # Using brightness indicator
-bindsym XF86MonBrightnessUp exec "/opt/extras.ubuntu.com/indicator-brightness/indicator-brightness-adjust --up"
-bindsym XF86MonBrightnessDown exec "/opt/extras.ubuntu.com/indicator-brightness/indicator-brightness-adjust --down"
+# bindsym XF86MonBrightnessUp exec "/opt/extras.ubuntu.com/indicator-brightness/indicator-brightness-adjust --up"
+# bindsym XF86MonBrightnessDown exec "/opt/extras.ubuntu.com/indicator-brightness/indicator-brightness-adjust --down"
+
+# Using light
+# Screen brightness controls with notification
+# increase screen brightness
+bindsym XF86MonBrightnessUp exec "light -A 5; notify-send -t 500 'brightness up'"
+bindsym XF86MonBrightnessDown exec "light -U 10; notify-send -t 500 'brightness down'"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # mode hide
 # modifier $mod
-bar {
-        position top
-        status_command i3status
-        workspace_buttons yes
-        # verbose yes   # for debugging
-        colors{
-                background #3b3a36
-                statusline #ECF0F1
+# bar {
+#         position top
+#         status_command i3status
+#         workspace_buttons yes
+#         # verbose yes   # for debugging
+#         colors{
+#                 background #3b3a36
+#                 statusline #ECF0F1
 
 
-                # class             border    backgrd  text
-                active_workspace    #81CFE0   #1E8BC3  #E4F1FE
-                focused_workspace    #D35400   #D35400  #22313F
-                inactive_workspace  #3b3a36   #3b3a36  #AAAAAA
-                # urgent_workspace    #656565   #000000  #508bc7
-        }
-}
+#                 # class             border    backgrd  text
+#                 active_workspace    #81CFE0   #1E8BC3  #E4F1FE
+#                 focused_workspace    #D35400   #D35400  #22313F
+#                 inactive_workspace  #3b3a36   #3b3a36  #AAAAAA
+#                 # urgent_workspace    #656565   #000000  #508bc7
+#         }
+# }
 
 # Window title color
 # class                                 border  backgr.    text
@@ -301,6 +321,8 @@ assign [class="^Skype$"] 8
 # To get Xorg class: xprop | grep WM_CLASS, then click on window
 for_window [class="Firefox"] border none
 for_window [class="Rstudio"] border none
+for_window [class="Slack"] border none
+for_window [class="Inboxer"] border none
 for_window [class="Firefox" window_role="Preferences"] floating enable
 for_window [class="Nylas N1"] border none
 # for_window [class="Thunderbird" instance="Mail"] border none
