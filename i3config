@@ -37,7 +37,10 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+s exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
+# bindsym $mod+s exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
+bindsym $mod+s exec --no-startup-id "rofi -combi-modi window,ssh,drun,run -show combi -modi combi"
+bindsym Mod1d+Tab exec --no-startup-id rofi -show window
+bindsym $mod+c exec --no-startup-id rofi -show ssh
 
 # change focus
 bindsym $mod+n focus left
@@ -173,10 +176,10 @@ set $mode_system System (l) lock, (e) logout, (Shift+s) suspend, (r) reboot, (s)
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit suspend, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym s exec --no-startup-id i3exit shutdown, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -212,7 +215,7 @@ exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/wanaka.jpg )
 exec_always --no-startup-id ~/.config/polybar/polybar.sh &
 
 # (With i3, gnome-session-properties are pretty much useless and don't work)
-# exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # Should fix privilege elevation
 # exec /usr/share/samsung-tools/session-service.py
 exec setxkbmap us -variant colemak
 # exec isxlab ssh-add ~/.ssh/id_rsa                       # activate my ssh key
@@ -332,6 +335,7 @@ for_window [class="Google-chrome"] border none
 for_window [class="Terminator"] border none
 for_window [class="X-terminal-emulator"] border none
 for_window [class="Checkout.py"] floating enable
+for_window [class="openshot"] border none
 # for_window [class="Synapse"] border none
 for_window [class="Sublime_text"] border none
 # for_window [class="ISL Pronto"] border none

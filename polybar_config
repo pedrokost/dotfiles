@@ -30,7 +30,7 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
+line-size = 0
 line-color = #f00
 
 border-size = 0
@@ -58,7 +58,7 @@ font-5 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = volume temperature cpu battery-combined-udev battery wlan eth date
+modules-right = volume temperature cpu battery-combined-udev battery backlight-acpi wlan eth date
 
 tray-position = right
 tray-padding = 2
@@ -175,8 +175,9 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 format = <label> <bar>
-output = eDP-1
-label = BL
+format-prefix = 
+label = 
+format-prefix-foreground = ${colors.foreground-alt}
 
 bar-width = 10
 bar-indicator = |
@@ -269,7 +270,7 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 label-volume = 
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.foreground-alt}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
@@ -296,6 +297,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = custom/script
 exec = "bash ~/.config/polybar/polybar-scripts/battery-combined-udev/battery-combined-udev.sh"
 tail = true
+label-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
