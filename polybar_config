@@ -58,7 +58,7 @@ font-5 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = volume temperature cpu battery-combined-udev battery backlight-acpi wlan eth date
+modules-right = volume temperature battery-combined-udev backlight-acpi wlan eth date
 
 tray-position = right
 tray-padding = 2
