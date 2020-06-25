@@ -1,4 +1,3 @@
-\
 # # START PROFILE HEADER
 # typeset -F SECONDS=0
 # export START_TIME=$SECONDS
@@ -29,10 +28,8 @@ alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
-alias ucc='XDG_CURRENT_DESKTOP=Unity7 unity-control-center'
-alias gncc='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
 # History
-export HISTSIZE=2000
+export HISTSIZE=20000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
@@ -120,15 +117,6 @@ function pdfwc() {
 # Customize to your needs...
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:$PATH
 
-# RVM
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$HOME/.rvm/gems/ruby-2.2.0/bin:$PATH
-export PATH=./node_modules/.bin:$PATH  # for NVM
-# SLOW
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-
-#export PATH=$PATH:~/sublime_text_3/
 if hash subl 2>/dev/null; then
 	export EDITOR="subl -w"
 fi
@@ -139,33 +127,13 @@ if hash fasd 2>/dev/null; then
 	eval "$(fasd --init auto)"
 fi
 
-# alias youtube='~/Github/youtube-dl/youtube-dl -t' 
 alias kb="setxkbmap us -variant colemak"   # Colemak keyboard layout
 alias kbsi="setxkbmap si"                  # Slovenian keyboard layout
-alias dotfiles="~/Dropbox/Misc/Github/dotfiles"
 alias tp=trash-put # install trash-cli first
 # alias rm=tp
 # alias rm-real=rm
 alias open=xdg-open
-# alias mounti="sshfs pdk10@shell1.doc.ic.ac.uk:/homes/pdk10 ~/imperial"
-# alias mountrobot="sshfs pi@129.31.195.68:/home/pi ~/robot"
 alias largestfiles="find -type f -ls | sort -k 7 -r -n | head |tr -s ' ' | cut -d' ' -f7,11,12,13,14,15,16,17,18,19"
-# alias pi="~dcw/tmp/git-clone-test/raspberry-pi-wifi/ssh-pi 80:1f:02:af:31:19"
-# alias picsh="bash -c 'export PERL5LIB=/homes/dcw/tmp/git-clone-test/raspberry-pi-wifi/PERSISTENT_TUPLES; ./scp-pi 80:1f:02:af:31:19'"
-
-
-# export ICL_USER_PASS=$(cat ~/.icl)
-# piip=129.31.198.39
-# alias pi-ssh="ssh pi@${piip} -X"
-# alias pi-scp="scp ./*.py pi@${piip}:~/prac-files/"
-# alias pi-ip='curl -s --data "macaddress=80:1f:02:af:31:19" --user $ICL_USER_PASS https://www.doc.ic.ac.uk/~jrj07/robotics/index.cgi | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -n 1'
-# alias pi-ssh="ssh pi@`pi-ip` -X"
-# alias pi-scp="scp ./*.py pi@`pi-ip`:~/prac-files/"
-
-alias i3-lock="i3lock" # called from the i3-exit script
-alias i3lock="i3lock -c 000000"
-alias google-keep="google-chrome --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
-alias wififix="nmcli networking off && nmcli networking on"
 
 # Terminal 256 colors
 export TERM="xterm-256color"
@@ -181,14 +149,12 @@ export NVM_DIR=~/.nvm
 # where to store our virtual envs
 export WORKON_HOME=$HOME/.virtualenvs 
 # where projects will reside
-export PROJECT_HOME=$HOME/xMarine
+export PROJECT_HOME=$HOME/projects/
 # where is the virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
-
-
-# export PATH=$PATH:/home/pedro/Envs/grid/lib/python2.7/site-packages
-# export PYTHONPATH="/home/pedro/Envs/grid/lib/python2.7/site-packages:$PYTHONPATH"
 
 # # START PROFILE FOOTER
 # # show total load time
