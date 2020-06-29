@@ -5,7 +5,7 @@ gnome.gtk.theme:	Adwaitav
 ! Adwaita       Ayu       Ayu-Darker  Ayu-Mirage-Dark    Default  HighContrast
 ! Adwaita-dark  Ayu-Dark  Ayu-Mirage  Ayu-Mirage-Darker  Emacs    Raleigh
 
-!i3-wm.bar.trayoutput:	primary
+i3-wm.bar.trayoutput:	primary
 
 ! Up to 3 can be specified without changing the i3config file
 i3-wm.program.1: /usr/bin/nm-applet
