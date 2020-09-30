@@ -1,6 +1,6 @@
 ! Find current values with `xrdb -query | grep gtk`
 ! Refresh with: `regolith-look refresh`
-i3-wm.bar.position:	top
+i3-wm.bar.position:	bottom
 gnome.gtk.theme:	Adwaitav		
 ! Adwaita       Ayu       Ayu-Darker  Ayu-Mirage-Dark    Default  HighContrast
 ! Adwaita-dark  Ayu-Dark  Ayu-Mirage  Ayu-Mirage-Darker  Emacs    Raleigh
@@ -13,6 +13,8 @@ i3-wm.program.2: (sleep 20 && dropbox start -i)
 i3-wm.program.3: redshift -l 45.96:14.63 -t 6500:4100
 
 i3-wm.font pango:Ubuntu Mono 10
+i3-wm.gaps.inner.size:0
+i3-wm.gaps.focus_follows_mouse:yes
 
 gnome.wallpaper: /home/pedro/Pictures/Wallpaper/wanaka.jpg
 

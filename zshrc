@@ -1,3 +1,6 @@
+export WORKON_HOME=/home/pedro/.virtualenvs/
+export PROJECT_HOME=/home/pedro/projects/
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
