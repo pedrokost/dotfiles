@@ -10,13 +10,13 @@ i3-wm.bar.trayoutput:	primary
 ! Up to 3 can be specified without changing the i3config file
 i3-wm.program.1: /usr/bin/nm-applet
 i3-wm.program.2: (sleep 20 && dropbox start -i)
-i3-wm.program.3: redshift -l 45.96:14.63 -t 6500:4100
+i3-wm.program.3: redshift -l 45.96:14.63 -t 6500:3500
 
 i3-wm.font pango:Ubuntu Mono 10
 i3-wm.gaps.inner.size:0
 i3-wm.gaps.focus_follows_mouse:yes
 
-gnome.wallpaper: /home/pedro/Pictures/Wallpaper/wanaka.jpg
+gnome.wallpaper: /home/pedro/Pictures/Wallpaper/harshit-sharma-weRtrhhTz4s-unsplash.jpg
 
 
 ! ==================================================================

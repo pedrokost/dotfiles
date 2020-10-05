@@ -12,7 +12,8 @@
 
 # Backend to use: "xrender" or "glx".
 # GLX backend is typically much faster but depends on a sane driver.
-backend = "glx";
+# backend = "glx";
+backend = "xrender";
 
 #################################
 #
@@ -128,9 +129,9 @@ fading = false;
 # The time between steps in a fade in milliseconds. (default 10).
 fade-delta = 0;
 # Opacity change between steps while fading in. (default 0.028).
-fade-in-step = 0.0;
+fade-in-step = 1;
 # Opacity change between steps while fading out. (default 0.03).
-fade-out-step = 0.0;
+fade-out-step = 1;
 # Fade windows in/out when opening/closing
 no-fading-openclose = true;
 
