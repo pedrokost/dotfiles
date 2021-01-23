@@ -125,7 +125,9 @@ function pdfwc() {
 }
 
 # Customize to your needs...
-export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:/home/pedro/Downloads/wine-tkg-git/wine-tkg-git/non-makepkg-builds/wine-tkg-staging-fsync-git-6.0rc3.r1.g7ad10427/bin:$PATH
+
+
 
 if hash subl 2>/dev/null; then
 	export EDITOR="subl -w"
@@ -190,3 +192,5 @@ smartresizekeepsize() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export WINEESYNC=1
