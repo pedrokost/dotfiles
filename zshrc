@@ -125,7 +125,7 @@ function pdfwc() {
 }
 
 # Customize to your needs...
-export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:/home/pedro/Downloads/wine-tkg-git/wine-tkg-git/non-makepkg-builds/wine-tkg-staging-fsync-git-6.0rc3.r1.g7ad10427/bin:$PATH
+export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:/home/pedro/Downloads/wine-tkg-git/wine-tkg-git/non-makepkg-builds/wine-tkg-staging-fsync-git-6.0rc3.r1.g7ad10427/bin:/home/pedro/.yarn/bin:$PATH
 
 
 
