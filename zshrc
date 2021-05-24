@@ -38,6 +38,8 @@ alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
+
+
 # History
 export HISTSIZE=20000
 export HISTFILE="$HOME/.history"
@@ -189,6 +191,13 @@ smartresizekeepsize() {
    echo $1 $sz
    mogrify -path $2 -filter Triangle -define filter:support=2 -thumbnail $sz -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
 }
+
+tripplemonitor() {
+	xrandr --newmode "1920x1200_60.00"  193.25  1920 2056 2256 2592  1200 1203 1209 1245 -hsync +vsync
+	xrandr --addmode DP-2-3 1920x1200_60.00
+	xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --mode 1920x1200 --pos 1200x0 --rotate left --output DP-2-2 --primary --mode 1920x1200 --pos 0x0 --rotate left --output DP-2-3 --mode 1920x1200_60.00 --pos 2400x0 --rotate left
+}
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

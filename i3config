@@ -359,3 +359,5 @@ bindsym $mod+Shift+f move scratchpad
 bindsym $mod+f scratchpad show
 
 bindsym $mod+k [class="Anki"] scratchpad show
+
+new_window 1pixel
