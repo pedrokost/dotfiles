@@ -229,7 +229,7 @@ exec gnome-sound-applet
 # exec synapse -s
 exec (sleep 20 && dropbox start -i)
 # exec indicator-cpufreq -f
-exec gtk-redshift -l 45.96:14.63 -t 6500:4100
+exec gtk-redshift -l 45.96:14.63 -t 6500:3600
 exec nmcli nm wifi on  # enable Wifi
 # exec (sleep 120 && isnotxlab && execonce anki)
 # exec (sleep 60 && google-keep)  # Google Keep
