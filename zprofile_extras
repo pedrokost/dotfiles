@@ -1,0 +1,20 @@
+# TODO: append this content to the zprofile file
+
+# Source: https://boris.schapira.dev/2018/09/one-host-file-to-block-them-all/
+function togglehost() {
+    if [ -e /etc/host.bak ]
+    then
+        sudo mv /etc/host.bak /etc/hosts
+        echo "Hosts file is active again"
+    else
+        sudo mv /etc/hosts /etc/host.bak
+        echo "Hosts file is set aside"
+    fi
+}
+# Add the following to the crontab:
+# * * * * * if [ ! -e /etc/hosts ]; then /usr/bin/notify-send -u low -t 60000 "Host file does not exists. Run togglehost to place it back"; fi 
+
+
+
+# Inform me to shut of computer when its late
+* 15-23,0-6 * * * /usr/bin/notify-send -t 60000 "Turn off computer. Relax." "It's time to relax and shut off all screen.\nGo read a book and prepare for sleep.\nPrepare things for tomorrow.\nPut your mind to paper"
