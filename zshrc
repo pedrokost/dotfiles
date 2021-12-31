@@ -200,7 +200,9 @@ vvvmonitor() {
 }
 
 vvhmonitor() {
-	xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --mode 1920x1200 --pos 1200x0 --rotate left --output DP-2-2 --primary --mode 1920x1200 --pos 0x0 --rotate left --output DP-2-3 --mode 1920x1200_60.00 --pos 2400x477 --rotate normal
+	xrandr --newmode "1920x1200_60.00"  193.25  1920 2056 2256 2592  1200 1203 1209 1245 -hsync +vsync
+	xrandr --addmode DP-2-3 1920x1200_60.00
+	xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --mode 1920x1200 --pos 1200x0 --rotate left --output DP-2-2 --primary --mode 1920x1200 --pos 0x0 --rotate left --output DP-2-3 --mode 1920x1200_60.00 --pos 2400x311 --rotate normal
 }
 
 
