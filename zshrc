@@ -205,6 +205,10 @@ vvhmonitor() {
 	xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --mode 1920x1200 --pos 1200x0 --rotate left --output DP-2-2 --primary --mode 1920x1200 --pos 0x0 --rotate left --output DP-2-3 --mode 1920x1200_60.00 --pos 2400x311 --rotate normal
 }
 
+vhmonitor() {
+	xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --mode 2560x1440 --pos 1200x0 --rotate normal --output DP-2-2 --primary --mode 1920x1200 --pos 0x0 --rotate left --output DP-2-3 --off
+}
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
