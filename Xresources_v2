@@ -1,0 +1,9 @@
+regolith.wallpaper.file: /home/pedro/Pictures/Wallpaper/harshit-sharma-weRtrhhTz4s-unsplash.jpg
+regolith.wallpaper.options: zoom
+!regolith.look.path: /usr/share/regolith-look/nord
+regolith.look.path: /usr/share/regolith-look/default
+
+i3-wm.gaps.focus_follows_mouse:yes
+
+! Up to 3 can be specified without changing the i3config file
+i3-wm.program.3: redshift -l 45.96:14.63 -t 6500:3500
