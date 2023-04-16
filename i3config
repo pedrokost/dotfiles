@@ -202,11 +202,6 @@ bindsym $mod+x mode "$mode_system"
 # Font style
 font pango: Ubuntu Mono 10
 
-# Wallpaper
-# exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/aurora.jpg
-# exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/lake_powel.jpg
-exec --no-startup-id feh --bg-fill /home/pedro/Pictures/Wallpaper/wanaka.jpg
-exec ( sleep 5 && feh --bg-fill /home/pedro/Pictures/Wallpaper/wanaka.jpg )
 # exec prey
 
 
