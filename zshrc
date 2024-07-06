@@ -214,3 +214,6 @@ vhmonitor() {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export WINEESYNC=1
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
