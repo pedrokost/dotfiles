@@ -217,3 +217,6 @@ export WINEESYNC=1
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export FLYCTL_INSTALL="/home/pedro/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
