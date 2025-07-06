@@ -1,6 +1,5 @@
 export WORKON_HOME=/home/pedro/.virtualenvs/
 export PROJECT_HOME=/home/pedro/projects/
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -165,10 +164,6 @@ export NVM_DIR=~/.nvm
 export WORKON_HOME=$HOME/.virtualenvs 
 # where projects will reside
 export PROJECT_HOME=$HOME/projects/
-# where is the virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
 
 
 # # START PROFILE FOOTER
@@ -214,9 +209,6 @@ vhmonitor() {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export WINEESYNC=1
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 export FLYCTL_INSTALL="/home/pedro/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
