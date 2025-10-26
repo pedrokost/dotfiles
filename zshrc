@@ -212,3 +212,6 @@ export WINEESYNC=1
 
 export FLYCTL_INSTALL="/home/pedro/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+alias cursor='~/Applications/Cursor-1.2.1-x86_64_2e4d89c2624eb13f05ac4745c5a1070a.AppImage --no-sandbox'
+. "$HOME/.local/bin/env"
